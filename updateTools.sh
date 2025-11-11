@@ -63,6 +63,7 @@ commands=(
   "go install github.com/003random/getJS/v2@latest"
   "go install github.com/visma-prodsec/confused@latest"
   "git -C \"$wordlist_dir\"/seclists pull origin master"
+  "go install github.com/OJ/gobuster/v3@latest"
 )
 
 # runs commands in background

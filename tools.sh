@@ -17,7 +17,7 @@ error_go="/root/go_install_errors-tools.log"
 max_jobs=5
 
 # installing one at a time to prevent installation errors 
-packages="nmap metasploit-framework arp-scan netdiscover exploitdb smbclient ffuf john hashcat hydra name-that-hash wpscan sublist3r subfinder wafw00f exiftool adb apktool jadx"
+packages="nmap metasploit-framework arp-scan netdiscover exploitdb smbclient ffuf john hashcat hydra name-that-hash wpscan sublist3r subfinder wafw00f exiftool adb apktool jadx dnsenum snmp onesixtyone feroxbuster enum4linux"
 
 apt-get update
 for pkg in $packages; do
@@ -84,6 +84,7 @@ commands=(
   "cd \"$install_dir\" && wget https://github.com/patrickfav/uber-apk-signer/releases/download/v1.2.1/uber-apk-signer-1.2.1.jar"
   "echo \"alias uber-apk-signer='java -jar /opt/uber-apk-signer-1.2.1.jar --allowResign -a'\" >> ~/.bashrc"
   "echo \"alias uber-apk-signer='java -jar /opt/uber-apk-signer-1.2.1.jar --allowResign -a'\" >> ~/.zshrc"
+  "cd \"$install_dir\" && git clone https://github.com/Dewalt-arch/pimpmykali && chmod +x pimpmykali/pimpmykali.sh && pimpmykali/pimpmykali.sh --cme
 )
 
 # runs commands in background
@@ -105,16 +106,17 @@ done
 wait  # waits for all background jobs to finish 
 
 commands=(
-  'go install -v github.com/owasp-amass/amass/v4/...@master'
-  'go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest'
-  'go install github.com/projectdiscovery/katana/cmd/katana@latest'
-  'go install github.com/lc/gau/v2/cmd/gau@latest'
-  'go install github.com/hahwul/dalfox/v2@latest'
-  'go install github.com/lc/subjs@latest'
-  'go install github.com/visma-prodsec/confused@latest'
-  'go install github.com/003random/getJS/v2@latest'
-  'rm -f /usr/bin/httpx || true && go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest'
-  'go install github.com/tomnomnom/waybackurls@latest'
+  "go install -v github.com/owasp-amass/amass/v4/...@master"
+  "go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest"
+  "go install github.com/projectdiscovery/katana/cmd/katana@latest"
+  "go install github.com/lc/gau/v2/cmd/gau@latest"
+  "go install github.com/hahwul/dalfox/v2@latest"
+  "go install github.com/lc/subjs@latest"
+  "go install github.com/visma-prodsec/confused@latest"
+  "go install github.com/003random/getJS/v2@latest"
+  "rm -f /usr/bin/httpx || true && go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest"
+  "go install github.com/tomnomnom/waybackurls@latest"
+  "go install github.com/OJ/gobuster/v3@latest"
 )
 
 # runs commands in background

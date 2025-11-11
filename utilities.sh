@@ -42,11 +42,11 @@ apt-get update
 apt-get install -y -f
 
 # installing one at a time to prevent installation errors 
-packages="build-essential vim unzip netcat-traditional hexedit openvpn whois nbtscan docker.io golang-go bsdextrautils default-jdk xsltproc jq libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl git libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev libzstd-dev pyenv gpg file"
+packages="build-essential vim unzip netcat-traditional terminator hexedit openvpn whois nbtscan docker.io golang-go bsdextrautils default-jdk xsltproc jq libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl git libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev libzstd-dev pyenv gpg file"
 
 for pkg in $packages; do
-    apt-get install -y -f     # not really required everytime but I like to be on safe side 
     echo "Installing $pkg..."
+    apt-get install -y -f     # not really required everytime but I like to be on safe side 
     if ! sudo apt-get install -y "$pkg"; then
         echo "FAILED: $pkg" >> "$error_apt"
     fi

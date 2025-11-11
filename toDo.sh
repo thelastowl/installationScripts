@@ -1,7 +1,5 @@
 # utilities.sh
-## tilix
-### check -> https://github.com/centralinfosec/Tilix-Kali-Setup
-### https://www.centralinfosec.com/blog/tilix-kali-install
+## 
 
 # tools.sh
 ## setup config! -> curl https://raw.githubusercontent.com/OWASP/Amass/master/examples/config.ini > ~/.config/amass/config.ini
