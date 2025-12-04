@@ -42,7 +42,7 @@ apt-get update
 apt-get install -y -f
 
 # installing one at a time to prevent installation errors 
-packages="build-essential vim unzip netcat-traditional terminator hexedit openvpn whois nbtscan docker.io golang-go bsdextrautils default-jdk xsltproc jq libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl git libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev libzstd-dev pyenv gpg file"
+packages="build-essential vim unzip netcat-traditional terminator hexedit openvpn whois nbtscan docker.io golang-go bsdextrautils default-jdk xsltproc jq libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl git libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev libzstd-dev pyenv gpg file net-tools pipx cifs-utils"
 
 for pkg in $packages; do
     echo "Installing $pkg..."
@@ -51,6 +51,8 @@ for pkg in $packages; do
         echo "FAILED: $pkg" >> "$error_apt"
     fi
 done
+
+pipx ensurepath
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"

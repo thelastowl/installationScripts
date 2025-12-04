@@ -17,7 +17,7 @@ error_go="/root/go_install_errors-tools.log"
 max_jobs=5
 
 # installing one at a time to prevent installation errors 
-packages="nmap metasploit-framework arp-scan netdiscover exploitdb smbclient ffuf john hashcat hydra name-that-hash wpscan sublist3r subfinder wafw00f exiftool adb apktool jadx dnsenum snmp onesixtyone feroxbuster enum4linux"
+packages="nmap metasploit-framework arp-scan netdiscover exploitdb smbclient smbmap sslscan ffuf john hashcat hydra name-that-hash wpscan sublist3r subfinder wafw00f exiftool adb apktool jadx dnsenum whatweb snmp onesixtyone feroxbuster enum4linux hashid hash-identifier impacket-scripts dnsrecon gobuster nbtscan oscanner redis-tools sipvicious tnscmd10g"
 
 apt-get update
 for pkg in $packages; do
@@ -84,7 +84,9 @@ commands=(
   "cd \"$install_dir\" && wget https://github.com/patrickfav/uber-apk-signer/releases/download/v1.2.1/uber-apk-signer-1.2.1.jar"
   "echo \"alias uber-apk-signer='java -jar /opt/uber-apk-signer-1.2.1.jar --allowResign -a'\" >> ~/.bashrc"
   "echo \"alias uber-apk-signer='java -jar /opt/uber-apk-signer-1.2.1.jar --allowResign -a'\" >> ~/.zshrc"
-  "cd \"$install_dir\" && git clone https://github.com/Dewalt-arch/pimpmykali && chmod +x pimpmykali/pimpmykali.sh && pimpmykali/pimpmykali.sh --cme
+  "cd \"$install_dir\" && git clone https://github.com/Dewalt-arch/pimpmykali && chmod +x pimpmykali/pimpmykali.sh && pimpmykali/pimpmykali.sh --cme"
+  "pipx install git+https://github.com/Pennyw0rth/NetExec"
+  "pipx install git+https://github.com/Tib3rius/AutoRecon.git"
 )
 
 # runs commands in background
