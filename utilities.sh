@@ -38,8 +38,7 @@ echo 'privesc_dir="/opt/privesc"' >> ~/.zshrc
 error_apt="/root/missing_packages-utility.log"
 >> "$error_apt"
 
-apt-get update
-apt-get install -y -f
+rm -rf /var/lib/apt/lists/* && apt-get update && apt-get install -y -f
 
 # installing one at a time to prevent installation errors 
 packages="build-essential vim unzip netcat-traditional terminator hexedit openvpn whois nbtscan docker.io golang-go bsdextrautils default-jdk xsltproc jq libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl git libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev libzstd-dev pyenv gpg file net-tools pipx cifs-utils"

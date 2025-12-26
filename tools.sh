@@ -14,12 +14,12 @@ error_go="/root/go_install_errors-tools.log"
 >> "$error_go"
 
 # used later when concurrently running commands
-max_jobs=5
+max_jobs=7
 
 # installing one at a time to prevent installation errors 
-packages="nmap metasploit-framework arp-scan netdiscover exploitdb smbclient smbmap sslscan ffuf john hashcat hydra name-that-hash wpscan sublist3r subfinder wafw00f exiftool adb apktool jadx dnsenum whatweb snmp onesixtyone feroxbuster enum4linux hashid hash-identifier impacket-scripts dnsrecon gobuster nbtscan oscanner redis-tools sipvicious tnscmd10g"
+packages="nmap metasploit-framework arp-scan netdiscover exploitdb smbclient smbmap sslscan ffuf john hashcat hydra name-that-hash wpscan sublist3r subfinder wafw00f exiftool adb apktool jadx dnsenum whatweb snmp onesixtyone feroxbuster enum4linux hashid hash-identifier impacket-scripts dnsrecon gobuster nbtscan oscanner redis-tools sipvicious tnscmd10g sqsh mariadb-client-core"
 
-apt-get update
+rm -rf /var/lib/apt/lists/* && apt-get update && apt-get install -y -f
 for pkg in $packages; do
     echo "Installing $pkg..."
     apt-get install -y -f    # not really required everytime but I like to be on safe side 
